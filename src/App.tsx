@@ -1,5 +1,12 @@
+import classes from "./App.module.css";
+import { Board } from "./board/Board";
+
 function App() {
-    return <div className="App">Hello World</div>;
+    return (
+        <div className={classes.container}>
+            <Board />
+        </div>
+    );
 }
 
 export default App;
