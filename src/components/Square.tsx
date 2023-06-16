@@ -2,31 +2,25 @@ import React from "react";
 import { BLACK, WHITE } from "../constants";
 
 interface squareProps {
-    col_id: string;
-    row_id: number;
-    isBlack?: boolean;
+    square: Square;
     children?: React.ReactNode;
 }
 
-export const Square: React.FC<squareProps> = ({
-    isBlack,
-    col_id,
-    row_id,
-    children,
-}) => {
-    const fillColor = isBlack ? BLACK : WHITE;
-    const textColor = isBlack ? WHITE : BLACK;
+export const Square: React.FC<squareProps> = ({ square }) => {
+    const textColor = square.color === BLACK ? WHITE : BLACK;
+
+    console.log("xxx", square);
 
     return (
         <div
             style={{
-                backgroundColor: fillColor,
+                backgroundColor: square.color,
                 color: textColor,
                 width: "70px",
                 height: "70px",
             }}
         >
-            {children}
+            {square.piece}
         </div>
     );
 };
