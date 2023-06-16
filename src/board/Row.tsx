@@ -8,9 +8,8 @@ interface rowProps {
 export const Row: React.FC<rowProps> = ({ id }) => {
     const squaresObjs = useBoardStore().getRow(id);
 
-    console.log(squaresObjs);
-    const squares = squaresObjs.map((square) => {
-        return <Square square={square} />;
+    const squares = squaresObjs.map((square, index) => {
+        return <Square key={index} square={square} />;
     });
 
     return (
