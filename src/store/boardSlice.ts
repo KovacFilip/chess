@@ -349,7 +349,6 @@ export const useBoardStore = create<boardState>()((set, get) => ({
                 return square;
             });
 
-            console.log(state);
             return { ...state, board: { squares: newState } };
         }),
 }));
