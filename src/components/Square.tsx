@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { BLACK, WHITE } from "../constants";
 import { useBoardStore } from "../store/boardSlice";
 import classes from "./Square.module.css";
 
@@ -9,8 +8,6 @@ interface squareProps {
 }
 
 export const Square: React.FC<squareProps> = ({ square }) => {
-    const textColor = square.color === BLACK ? WHITE : BLACK;
-
     useEffect(() => {
         const unsubscribe = useBoardStore.subscribe(() => {});
 
@@ -24,7 +21,6 @@ export const Square: React.FC<squareProps> = ({ square }) => {
             className={classes.square}
             style={{
                 backgroundColor: square.color,
-                color: textColor,
             }}
         >
             {square.piece !== "" ? (
