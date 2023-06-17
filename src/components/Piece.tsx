@@ -1,9 +1,14 @@
 import React from "react";
+import classes from "./Piece.module.css";
 
-interface info {
-    name: string;
+interface squareInfo {
+    square: Square;
 }
 
-export const Piece: React.FC<info> = ({ name }) => {
-    return <div>{name}</div>;
+export const Piece: React.FC<squareInfo> = ({ square }) => {
+    return (
+        <div>
+            {<img src={square.piece} alt="piece" className={classes.piece} />}
+        </div>
+    );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useBoardStore } from "../store/boardSlice";
+import { Piece } from "./Piece";
 import classes from "./Square.module.css";
 
 interface squareProps {
@@ -23,11 +24,7 @@ export const Square: React.FC<squareProps> = ({ square }) => {
                 backgroundColor: square.color,
             }}
         >
-            {square.piece !== "" ? (
-                <img src={square.piece} alt="piece" className={classes.piece} />
-            ) : (
-                ""
-            )}
+            {square.piece !== "" ? <Piece square={square} /> : ""}
         </div>
     );
 };

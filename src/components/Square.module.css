@@ -1,12 +1,3 @@
-.piece {
-    width: 60px;
-    height: 60px;
-}
-
-.piece:hover {
-    cursor: pointer;
-}
-
 .square {
     display: flex;
     align-items: center;
